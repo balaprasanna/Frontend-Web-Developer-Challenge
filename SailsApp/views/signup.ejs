@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+  	<head>
+  	<title>New Sails App (Angular App)</title>
+  	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	</head>
+	<body data-ng-init="customers=[
+	{ name:'Bala', city:'Singapore'},
+	{ name:'NUS', city:'Clementi'}]" >
+	
+	<h1> Please Enter the Food Name to search </h1>
+	
+	<input type="text" data-ng-model="foodname"/>
+	{{ foodname }}
+	
+	<ul>
+		<li data-ng-repeat = "cust in customers | filter:foodname | orderBy:'city'">
+			{{ cust.name + ' ' + cust.city }}
+		</li>
+	</ul>
+	<!--SCRIPTS-->
+	<script src="/js/dependencies/sails.io.js"></script>
+	<script src="/js/angular.min.js"></script>
+	<!--SCRIPTS END-->
+	</body>
+</html>
