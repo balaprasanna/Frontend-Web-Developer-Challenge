@@ -8,24 +8,40 @@
 	<body>
 	
 	<div ng-controller="searchController" >
+			<div class="mainbox">
+				<div class="box1 form-group">
+					<h1> Please Enter the Food Name to search </h1>		
+					<input type="text" data-ng-model="foodname" ng-keyup='searchme(foodname)'/>		
+					<ul>
+						<li data-ng-repeat = "food in foodItems" ng-click='giveMeNutritientsInfo(food)'>
+							{{ food.name }}
+						</li>			
+					</ul>
+				</div>
 
-		<div id="wrapper">
-			
-			<div id="sidebar-wrapper" class="box1">
-				<h1> Please Enter the Food Name to search </h1>		
-				<input type="text" data-ng-model="foodname" ng-keyup='searchme(foodname)'/>		
-				<ul>
-					<li data-ng-repeat = "food in foodItems" ng-click='giveMeNutritientsInfo(food)'>
-						{{ food.name }}
-					</li>			
-				</ul>
+				<div  class="box2">
+
+					<!-- <ul id="results" data-ng-repeat = "nu in nutri.nutritionInfo">
+						<h4>{{nu.name}}</h4>
+						<li>							
+							<div class="smallBox">
+								{{nu}}
+							</div>
+						</li>
+					</ul>					 -->					
+
+					<div class="smallPices" data-ng-repeat = "nu in nutri.nutritionInfo">
+						<div class="miniBoxes">
+							<h4 align="center">{{nu.name}}</h4>
+							<div class="smallBox">							
+								{{nu}}
+							</div>
+						</div>
+					</div>
+
+				</div>
+
 			</div>
-
-			<div id="page-content-wrapper"  class="box2 container-fluid">
-				{{nutri}}
-			</div>
-
-		</div>
 
 	</div>
 	<!--SCRIPTS-->
