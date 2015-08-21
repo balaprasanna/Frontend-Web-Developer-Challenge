@@ -1,0 +1,11 @@
+<h1> Welcome to Nutiriton Info Page </h1>
+<div ng-controller="simpleController" >
+		<h1> Please Enter the Food Name to search </h1>
+		
+		<input type="text" data-ng-model="foodname" />		
+		<ul>
+			<li data-ng-repeat = "cust in customers | filter:foodname | orderBy:'city'">
+				{{ cust.name }}
+			</li>
+		</ul>
+</div>

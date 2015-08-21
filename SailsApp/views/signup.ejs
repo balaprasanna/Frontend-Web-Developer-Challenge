@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html ng-app>
+<html data-ng-app="myApp">
   	<head>
   	<title>New Sails App (Angular App)</title>
   	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	</head>
-	<body data-ng-init="customers=[
-	{ name:'Bala', city:'Singapore'},
-	{ name:'NUS', city:'Clementi'}]" >
+	<body>
 	
-	<h1> Please Enter the Food Name to search </h1>
-	
-	<input type="text" data-ng-model="foodname"/>
-	{{ foodname }}
-	
-	<ul>
-		<li data-ng-repeat = "cust in customers | filter:foodname | orderBy:'city'">
-			{{ cust.name + ' ' + cust.city }}
-		</li>
-	</ul>
+	<div ng-controller="simpleController" >
+		<h1> Please Enter the Food Name to search </h1>
+		
+		<input type="text" data-ng-model="foodname" />		
+		<ul>
+			<li data-ng-repeat = "cust in customers | filter:foodname | orderBy:'city'">
+				{{ cust.name + ' ' + cust.city }}
+			</li>
+		</ul>
+
+		
+	</div>
 	<!--SCRIPTS-->
 	<script src="/js/dependencies/sails.io.js"></script>
 	<script src="/js/angular.min.js"></script>
+	<script src="/js/holmuskAppscript.js"></script>
+	<script src="/js/script.js"></script>
 	<!--SCRIPTS END-->
 	</body>
 </html>

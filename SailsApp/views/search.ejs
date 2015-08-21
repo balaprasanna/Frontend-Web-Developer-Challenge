@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-ng-app="holmuskApp">
+  	<head>
+  	<title>New Sails App (Angular App)</title>
+  	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  	  <link rel="stylesheet" href="/styles/searchstyle.css">
+	</head>
+	<body>
+	
+	<div ng-controller="searchController" >
+
+		<div id="wrapper">
+			
+			<div id="sidebar-wrapper" class="box1">
+				<h1> Please Enter the Food Name to search </h1>		
+				<input type="text" data-ng-model="foodname" ng-keyup='searchme(foodname)'/>		
+				<ul>
+					<li data-ng-repeat = "food in foodItems" ng-click='giveMeNutritientsInfo(food)'>
+						{{ food.name }}
+					</li>			
+				</ul>
+			</div>
+
+			<div id="page-content-wrapper"  class="box2 container-fluid">
+				{{nutri}}
+			</div>
+
+		</div>
+
+	</div>
+	<!--SCRIPTS-->
+	<script src="/js/dependencies/sails.io.js"></script>
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/holmuskAppscript.js"></script>
+	<script src="/js/script.js"></script>
+	<!--SCRIPTS END-->
+	</body>
+</html>
